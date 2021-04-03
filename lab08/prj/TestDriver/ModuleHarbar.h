@@ -12,10 +12,11 @@ string Name_of_Developer()
 bool result(){
     int a=0;
     int b=0;
-    cout<<"a: ";
-    cin>>a;
-    cout<<"b: ";
-    cin>>b;
+    while (!(cout <<"a: ",cin >> a && cout<<"b: ",cin>>b)){
+           cout << "error\n";
+           cin.clear();
+           fflush(stdin);
+       }
     if(a+10>=b){
         return true;
     }
@@ -30,7 +31,10 @@ double S_calculation(){
     cin>>y;
     cout<<"z: ";
     cin>>z;
+    if(x > -1 && x != 0 && z >= 0){
     S=log(x-y)+sqrt(PI*pow(x,2)/x+z/2*pow(y,2));
     return S;
+    }
+    else return nan("");
 }
 #endif // MODULESHARBAR_H
