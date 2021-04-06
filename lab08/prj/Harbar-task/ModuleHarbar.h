@@ -25,13 +25,12 @@ bool result(){
 double S_calculation(){
     double S=0,x=0,y=0,z=0;
     const double PI = 3.141592653589793;
-    cout<<endl<<"x: ";
-    cin>>x;
-    cout<<"y: ";
-    cin>>y;
-    cout<<"z: ";
-    cin>>z;
-    if(x > -1 && x != 0 && z >= 0){
+    while (!(cout <<"\nx: ",cin >> x && cout<<"y: ",cin>>y && cout<<"z: ",cin>>z)){
+           cout << "error\n";
+           cin.clear();
+           fflush(stdin);
+    }
+    if(x > -1 && x != 0 && y > 0){
     S=log(x-y)+sqrt(PI*pow(x,2)/x+z/2*pow(y,2));
     return S;
     }
