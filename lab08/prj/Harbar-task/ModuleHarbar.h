@@ -10,13 +10,12 @@ string Name_of_Developer()
     return name;
 }
 bool result(){
-    int a=0;
-    int b=0;
-    while (!(cout <<"a: ",cin >> a && cout<<"b: ",cin>>b)){
-           cout << "error\n";
-           cin.clear();
-           fflush(stdin);
-       }
+    char a=0;
+    char b=0;
+    cout <<"a: ";
+    cin >> a;
+    cout<<"b: ";
+    cin>>b;
     if(a+10>=b){
         return true;
     }
@@ -27,10 +26,10 @@ double S_calculation(){
     const double PI = 3.141592653589793;
     do{
         (!(cout <<"\nx: ",cin >> x && cout<<"y: ",cin>>y && cout<<"z: ",cin>>z));
-           cout << "error\n";
-           cin.clear();
-           fflush(stdin);
-    }while ( (!((x > -1 && x != 0 && y > 0))));
+        cout << "Введiть бiльше 1\n";
+        cin.clear();
+        fflush(stdin);
+    }while ( (!((x > -1 && x != 0 && y > -1 && y!=0 && z>-1 && z!=0))));
     S=log(x-y)+sqrt(PI*pow(x,2)/x+z/2*pow(y,2));
     return S;
 }
