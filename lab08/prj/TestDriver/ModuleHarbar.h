@@ -49,15 +49,20 @@ double S_calculation(){
           }
           x=check(x);
       }
-      while(x<=y || y==0){
+      while(x<=y || y==0 || y<0){
       cout<<"Y - ";
-      if(x<y || x==y){
+      if(x<y || x==y || y<0){
         cout<<"Y має бути менше нiж x:  ";
       }
       y=check(y);
       }
+      while(z==0 || z<0){
       cout<<"Z - ";
-      z=check(z);
+      if(z==0 || y<0){
+        cout<<"Z має бути не вiд'ємним та бiльше 0:  ";
+      }
+       z=check(z);
+      }
     S=log(x-y)+sqrt(PI*pow(x,2)/x+z/2*pow(y,2));
     return S;
 }
