@@ -6,30 +6,30 @@ using namespace std;
 
 void S_calculation(){
     double S=0;
-     int x=0,y=0,z=0;
-   double PI = 3.141592653589793;
-   cout<<"\nX - ";
-      cin>>x;
-      while(x<0|| x==0){
-          if(x<0 || x==0){
-              cout<<"Введiть х бiльше 0: ";
-          }
-          cin>>x;
-      }
-      while(x<=y || y==0 || y<0){
-      cout<<"Y - ";
-      if(x<y || x==y || y<0){
-        cout<<"Y має бути менше нiж x:  ";
-      }
-      cin>>y;
-      }
-      while(z==0 || z<0){
-      cout<<"Z - ";
-      if(z==0 || z<0){
-        cout<<"Z має бути бiльше 0:  ";
-      }
-       cin>>z;
-      }
+    int x=0,y=0,z=0;
+    double PI = 3.141592653589793;
+    cout<<"\nX - ";
+    cin>>x;
+    while(x<0|| x==0){
+        if(x<0 || x==0){
+            cout<<"Введiть х бiльше 0: ";
+        }
+        cin>>x;
+    }
+    while(x<=y || y==0 || y<0){
+        cout<<"Y - ";
+        if(x<y || x==y || y<0){
+            cout<<"Y має бути менше нiж x:  ";
+        }
+        cin>>y;
+    }
+    while(z==0 || z<0){
+        cout<<"Z - ";
+        if(z==0 || z<0){
+            cout<<"Z має бути бiльше 0:  ";
+        }
+        cin>>z;
+    }
     S=log(x-y)+sqrt(PI*pow(x,2)/x+z/2*pow(y,2));
     cout<<"x: "<<hex<<x;
     cout<<"\ny: "<<hex<<y;
@@ -69,7 +69,7 @@ void deposit()
     float profit = 0;
     float annualRate = 0;
     const int daysInYear = 365;
-    const int daysInMonth = 30;
+    const int daysInMonth = 31;
     cout << "Введiть суму депозита: ";
     sumDeposit=validation();
     cout << "Введiть кiлькiсть мiсяцiв 6 або 12: ";
@@ -107,6 +107,15 @@ int validation2()
         cin.clear();
         fflush(stdin);
         cout<<"введiть показники за 31 день м/с: ";
+    }
+    while(arr==0 || arr>32.6){
+        if(arr==0 || arr>32.6){
+            cout<<"введiть показники не бiльше нiж 32.6: "<<endl;
+            cout<<"===>";
+            cin.clear();
+            fflush(stdin);
+        }
+        arr=validation2();
     }
     return arr;
 }
@@ -171,22 +180,22 @@ void veather()
             max = lol[i];
         }
     }
-    cout<<"максимальна сила вiтру у шкалi бофорта "<<max;
+    cout<<"максимальна сила вiтру у шкалi бофорта "<<max<<endl;
 }
 int validation3(){
     int a=0;
     while (!(cin >> a)){
-            cout << "Введiть числа: \n";
-            cin.clear();
-            fflush(stdin);
-            cout<<"===>";
-        }
-    while(a<0 || a==0 || a>908000){
-        if(a<0 || a==0 || a>908000){
-        cout<<"Введiть число вiд 0 до 9008000"<<endl;
-        cout<<"===>";
+        cout << "Введiть числа: \n";
         cin.clear();
         fflush(stdin);
+        cout<<"===>";
+    }
+    while(a<0 || a==0 || a>908000){
+        if(a<0 || a==0 || a>908000){
+            cout<<"Введiть число вiд 0 до 9008000"<<endl;
+            cout<<"===>";
+            cin.clear();
+            fflush(stdin);
         }
         a=validation3();
     }
@@ -213,12 +222,12 @@ void boll()
         else if(text[i]=='1') count_one++;
         i++;
     }
-    cout<<"13 елемент є: "<<text[12]<<endl;
-    if(text[12]=='0') {
-        cout<<"Кiлькiсть 0: "<<count_null;
+    cout<<"14 елемент є: "<<text[13]<<endl;
+    if(text[13]=='0') {
+        cout<<"Кiлькiсть 0: "<<count_null<<endl;
     }
     else {
-        cout<<"Кiлькiсть 1: "<<count_one;
+        cout<<"Кiлькiсть 1: "<<count_one<<endl;
     }
 }
 
