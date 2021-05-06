@@ -68,8 +68,6 @@ void deposit()
     int amountMonth = 0;
     float profit = 0;
     float annualRate = 0;
-    const int daysInYear = 365;
-    const int daysInMonth = 31;
     cout << "Введiть суму депозита: ";
     sumDeposit=validation();
     cout << "Введiть кiлькiсть мiсяцiв 6 або 12: ";
@@ -92,10 +90,11 @@ void deposit()
         break;
     }
     cout << "Вiдсоткiв у мiсяць: ";
-    profit = sumDeposit * (annualRate / 100)  / daysInYear * daysInMonth;
-    cout << profit << endl;
+    profit = (sumDeposit * (annualRate / 100)  / 12 * amountMonth)/amountMonth;
+    cout<<profit;
+    cout<<endl;
     cout << "Вiдсотки за весь термiн: ";
-    profit *= amountMonth;
+    profit = sumDeposit * (annualRate / 100)  / 12 * amountMonth;
     cout << profit;
     cout<<endl;
 }
@@ -108,9 +107,9 @@ int validation2()
         fflush(stdin);
         cout<<"введiть показники за 31 день м/с: ";
     }
-    while(arr==0 || arr>32.6){
-        if(arr==0 || arr>32.6){
-            cout<<"введiть показники не бiльше нiж 32.6: "<<endl;
+    while(arr<0 || arr==0 || arr>100){
+        if(arr<0|| arr==0 || arr>100){
+            cout<<"введiть показники не менше 0 та не бiльше нiж 32.6: "<<endl;
             cout<<"===>";
             cin.clear();
             fflush(stdin);
@@ -222,8 +221,8 @@ void boll()
         else if(text[i]=='1') count_one++;
         i++;
     }
-    cout<<"14 елемент є: "<<text[13]<<endl;
-    if(text[13]=='0') {
+    cout<<"13 елемент є: "<<text[text.length()-13]<<endl;
+    if(text[text.length()-13]=='0') {
         cout<<"Кiлькiсть 0: "<<count_null<<endl;
     }
     else {
